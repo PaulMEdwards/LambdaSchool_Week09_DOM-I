@@ -42,15 +42,14 @@ const logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 //#region nav
-//Set Nav link text
 const nav = document.getElementsByTagName('nav');
 let nav_links = nav[0].querySelectorAll('a');
 for (e = 0; e < nav_links.length; e++) {
   let t = e+1;
   nav_links[e].text = siteContent["nav"]["nav-item-"+t];
 }
-let home = document.createElement('a');
-let gallery = document.createElement('a');
+const home = document.createElement('a');
+const gallery = document.createElement('a');
 home.textContent = "Home";
 home.setAttribute('href', '#');
 gallery.textContent = "Gallery";
@@ -62,7 +61,6 @@ nav_links.forEach((a) => a.style.color = 'green');
 //#endregion nav
 
 //#region cta
-//Set cta text & image
 const cta = document.getElementsByClassName('cta')[0];
 const cta_text = cta.getElementsByClassName('cta-text')[0];
 const cta_h1 = cta_text.querySelector('h1');
@@ -103,7 +101,7 @@ divs = undefined;
 const contact = document.getElementsByClassName('contact')[0];
 contact.querySelector('h4').textContent = siteContent["contact"]["contact-h4"];
 const paragraphs = contact.querySelectorAll('p');
-let address = siteContent["contact"]["address"];
+const address = siteContent["contact"]["address"];
 let last_space = address.lastIndexOf(" ");
 last_space = address.lastIndexOf(" ", last_space-1);
 const address_multiline = address.slice(0, last_space) + "<br/>" + address.slice(last_space+1);
