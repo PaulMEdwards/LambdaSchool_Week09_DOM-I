@@ -114,3 +114,17 @@ paragraphs[2].textContent = siteContent["contact"]["email"];
 const footer = document.getElementsByTagName('footer')[0];
 footer.querySelector('p').textContent = siteContent["footer"]["copyright"];
 //#endregion footer
+
+//#region stretch
+nav_links.forEach((a) => a.style.fontWeight = 'bold');
+
+cta_h1.style.color = 'DodgerBlue';
+document.querySelectorAll('h4').forEach((e) => e.style.color = 'DodgerBlue');
+cta_button.style.fontWeight = 'bold';
+
+paragraphs[0].innerHTML = `<a href='https://www.google.com/maps/search/${address.replace(/\ /g,"+")}'>${address_multiline}</a>`
+paragraphs[1].innerHTML = `<a href='tel:${siteContent["contact"]["phone"].replace(/\D/g, "")}'>${paragraphs[1].textContent}</a>`;
+paragraphs[2].innerHTML = `<a href='mailto:${siteContent["contact"]["email"]}'>${paragraphs[2].textContent}</a>`;
+
+footer.querySelector('p').innerHTML = footer.querySelector('p').innerHTML.replace('Copyright', '&copy;');
+//#endregion stretch
